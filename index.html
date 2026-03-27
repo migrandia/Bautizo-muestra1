@@ -10,43 +10,59 @@
            ============================================================ */
         
         const CONFIG = {
-            // 1. TEXTOS PRINCIPALES
+            // 1. FECHA DEL EVENTO (Importante para el contador)
+            // Formato: Mes Día, Año Hora (Ejemplo: "Oct 24, 2026 12:00:00")
+            fecha_countdown: "Oct 24, 2026 12:00:00", 
+            fecha_texto_largo: "Sábado, 24 de Octubre de 2026",
+
+            // 2. TEXTOS PRINCIPALES
             nombre_bebe: "Sofía Valentina",
             frase_biblica: "En tus manos, Señor, pongo mi vida y mi camino.",
             texto_invitacion: "Queremos compartir la alegría del bautizo de nuestra pequeña. Tu presencia es nuestro mejor regalo.",
             
-            // 2. FAMILIA (Nombres)
+            // 3. FAMILIA
             papas: "Roberto & Lucía",
             padrinos: "Carlos & Elena",
 
-            // 3. LOGÍSTICA (Nombres y Horas)
+            // 4. LOGÍSTICA
             iglesia_nombre: "Parroquia de San Juan Bautista",
             iglesia_hora: "12:00 PM",
-            iglesia_fecha: "24 de Octubre de 2026",
-            
             salon_nombre: "Quinta Las Palmas",
             salon_hora: "02:30 PM",
+
+            // 5. ITINERARIO
+            iti_titulo: "Nuestro Itinerario",
+            iti_1: "12:00 PM - Ceremonia Religiosa",
+            iti_2: "02:30 PM - Recepción y Comida",
+            iti_3: "04:30 PM - Pastel y Mesa de Dulces",
             
-            // 4. ENLACES (URLs)
+            // 6. CÓDIGO DE VESTIMENTA Y SOBRES
+            vest_titulo: "Código de Vestimenta",
+            vest_tipo: "Formal / Guayabera",
+            vest_nota: "Sugerencia: Colores claros o pasteles",
+            sobres_titulo: "Lluvia de Sobres",
+            sobres_texto: "Su presencia es nuestro mayor regalo, pero si desean tener un detalle, contaremos con un buzón para sobres en la recepción.",
+            
+            // 7. ENLACES (URLs)
             mapa_iglesia: "https://www.google.com/maps/place/Cd.+de+M%C3%A9xico/@19.3202008,-99.4822761,10z/data=!3m1!4b1!4m6!3m5!1s0x85ce0036b1352927:0xdefd9e4ee8d18a5b!8m2!3d19.2464696!4d-99.1013498!16s%2Fg%2F1220wgqb?entry=ttu&g_ep=EgoyMDI2MDMyMy4xIKXMDSoASAFQAw%3D%3D",
             mapa_salon: "https://www.google.com/maps/place/Cd.+de+M%C3%A9xico/@19.3202008,-99.4822761,10z/data=!3m1!4b1!4m6!3m5!1s0x85ce0036b1352927:0xdefd9e4ee8d18a5b!8m2!3d19.2464696!4d-99.1013498!16s%2Fg%2F1220wgqb?entry=ttu&g_ep=EgoyMDI2MDMyMy4xIKXMDSoASAFQAw%3D%3D",
-            link_hospedaje: "https://migrandia.github.io/hotel-bautizo//",
+            link_hospedaje: "https://migrandia.github.io/hotel-bautizo/",
             link_regalos: "https://mesaderegalos.liverpool.com.mx/",
             whatsapp_confirmar: "https://wa.me/521234567890?text=Confirmo%20asistencia",
-            
-            // 5. MÚSICA (Link directo mp3)
             link_musica: "https://www.dropbox.com/scl/fi/80hypdxkg24wx6x7oael2/En-Tus-Manos-Se-or.mp3?rlkey=j4di62c9sgj4txgwbpikcngp3&raw=1",
 
-            // 6. FOTOS (Las 4 imágenes de la invitación)
-            foto_1_portada: "https://www.dropbox.com/scl/fi/9avggx6ox57b9tkq9enxc/bautizo1.png?rlkey=xe50yu0f36p6uixsddj7mqs25&raw=1",
-            foto_2_familia: "https://www.dropbox.com/scl/fi/amq1vsm698rsf1daimlr6/bautizo2.png?rlkey=z2d7is02ys38pl6rd85cbmorz&raw=1",
-            foto_3_evento: "https://www.dropbox.com/scl/fi/tlg7mvb8lfoe4tmvuhooo/bautizo31.jpg?rlkey=2b1tqc59dp9law24w9wpfav6n&raw=1",
-            foto_4_final: "https://www.dropbox.com/scl/fi/7d6z0ji1ip3el5ijciae4/bautizo4.png?rlkey=5e3uypk20ipb9kge7l0kfv727&raw=1",
+            // 8. FOTOS
+            foto_1: "https://www.dropbox.com/scl/fi/9avggx6ox57b9tkq9enxc/bautizo1.png?rlkey=xe50yu0f36p6uixsddj7mqs25&raw=1",
+            foto_2: "https://www.dropbox.com/scl/fi/amq1vsm698rsf1daimlr6/bautizo2.png?rlkey=z2d7is02ys38pl6rd85cbmorz&raw=1",
+            foto_3: "https://www.dropbox.com/scl/fi/tlg7mvb8lfoe4tmvuhooo/bautizo31.jpg?rlkey=2b1tqc59dp9law24w9wpfav6n&raw=1",
+            foto_4: "https://www.dropbox.com/scl/fi/7d6z0ji1ip3el5ijciae4/bautizo4.png?rlkey=5e3uypk20ipb9kge7l0kfv727&raw=1",
 
-            // 7. COLORES PERSONALIZABLES
-            color_oro: "#d4b483",
-            color_fondo_claro: "#fdfaf8",
-            color_texto_oscuro: "#2d2d2d"
+            // 9. PERSONALIZACIÓN VISUAL
+            color_primario: "#d4b483", 
+            color_texto: "#2d2d2d",    
+            color_fondo_seccion: "#fdfaf8",
+            fuente_elegante: "'Cormorant Garamond', serif",
+            fuente_moderna: "'Montserrat', sans-serif"
         };
     </script>
 
@@ -54,30 +70,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
     
     <style>
-        :root { --oro: #d4b483; --blanco: #ffffff; --texto: #2d2d2d; --bloque: #fdfaf8; }
-        body, html { margin: 0; padding: 0; background-color: #1a1a1a; color: var(--texto); font-family: 'Montserrat', sans-serif; overflow-x: hidden; text-align: center; scroll-behavior: smooth;}
-        .invitation-container { max-width: 480px; margin: 0 auto; background-color: var(--blanco); box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+        :root { --oro: #d4b483; --texto: #2d2d2d; --bloque: #fdfaf8; --fuente-e: 'Cormorant Garamond', serif; --fuente-m: 'Montserrat', sans-serif; }
+        body, html { margin: 0; padding: 0; background-color: #1a1a1a; color: var(--texto); font-family: var(--fuente-m); overflow-x: hidden; text-align: center; scroll-behavior: smooth;}
+        .invitation-container { max-width: 480px; margin: 0 auto; background-color: #fff; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
         
-        /* PARALLAX CORREGIDO */
-        .parallax { 
-            height: 70vh; min-height: 500px;
-            background-attachment: fixed; background-position: center; background-size: cover; 
-            position: relative; display: flex; align-items: center; justify-content: center; 
-        }
-        
+        /* PARALLAX */
+        .parallax { height: 75vh; min-height: 500px; background-attachment: fixed; background-position: center; background-size: cover; position: relative; display: flex; align-items: center; justify-content: center; }
         #img-1 { height: 100vh; }
-        #img-1::after { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.45); z-index: 1; }
+        #img-1::after { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); z-index: 1; }
         
-        h1.nombre-portada { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: white; z-index: 2; text-shadow: 0 2px 15px rgba(212, 180, 131, 0.9); margin: 0; font-weight: 300; }
+        h1.nombre-portada { font-family: var(--fuente-e); font-size: 3.5rem; color: white; z-index: 2; text-shadow: 0 2px 15px rgba(0,0,0,0.5); margin: 0; font-weight: 300; }
         .bautizo-txt { font-size: 0.8rem; letter-spacing: 6px; color: white; z-index: 2; margin-bottom: 10px; font-weight: bold; }
 
-        section { padding: 70px 20px; background: white; }
-        h2.seccion { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--texto); margin-bottom: 20px; font-weight: 600;}
+        section { padding: 60px 20px; background: white; }
+        h2.seccion { font-family: var(--fuente-e); font-size: 2.2rem; color: var(--texto); margin-bottom: 20px; font-weight: 600;}
         
-        .details-box { background: var(--bloque); padding: 30px 20px; border-radius: 15px; border: 1px solid #eee; margin: 20px 0; }
-        .time-box { font-size: 2.6rem; color: var(--oro); font-family: 'Cormorant Garamond', serif; margin: 5px 0; font-weight: bold; }
+        .details-box { background: var(--bloque); padding: 30px 20px; border-radius: 15px; border: 1px solid #eee; margin: 15px 0; }
+        
+        /* ESTILO CONTADOR */
+        .countdown-container { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+        .count-item { background: white; border: 1px solid var(--oro); border-radius: 10px; padding: 10px; min-width: 60px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .count-num { display: block; font-size: 1.5rem; font-weight: bold; color: var(--oro); font-family: var(--fuente-e); }
+        .count-lab { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: #888; }
 
-        .padrinos-box { background: #f9f5f0; padding: 25px; border-radius: 10px; border: 1px solid #e0d4c0; margin-top: 20px; }
+        .iti-item { border-bottom: 1px solid #eee; padding: 12px 0; font-size: 0.9rem; color: #555; }
+        .iti-item:last-child { border: none; }
 
         .btn-menu { display: block; padding: 15px 5px; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; font-weight: bold; font-size: 0.7rem; letter-spacing: 2px; border-radius: 30px; text-transform: uppercase; margin: 10px auto; width: 80%; transition: 0.3s; }
         .btn-confirm { background: var(--oro); color: white; width: 85%; margin: 30px auto; padding: 20px; display: block; text-decoration: none; border-radius: 40px; font-weight: bold; letter-spacing: 2px; box-shadow: 0 4px 15px rgba(212,180,131,0.4); }
@@ -104,9 +121,19 @@
 
         <section>
             <span style="font-size: 2.5rem; color: var(--oro);">†</span>
-            <p id="frase" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; color: #555;"></p>
-            <h2 class="seccion" style="margin-top: 30px;">¡Están Invitados!</h2>
-            <p id="txt-invita"></p>
+            <p id="frase" style="font-family: var(--fuente-e); font-style: italic; font-size: 1.5rem; color: #555;"></p>
+            
+            <div style="margin-top: 40px;">
+                <p style="font-size: 0.8rem; letter-spacing: 3px; color: var(--oro); font-weight: bold; margin-bottom: 5px;">ACOMPÁÑANOS EL</p>
+                <h2 id="txt-fecha-larga" style="font-family: var(--fuente-e); font-size: 1.6rem; margin: 10px 0;"></h2>
+                
+                <div class="countdown-container">
+                    <div class="count-item"><span id="days" class="count-num">00</span><span class="count-lab">Días</span></div>
+                    <div class="count-item"><span id="hours" class="count-num">00</span><span class="count-lab">Hrs</span></div>
+                    <div class="count-item"><span id="minutes" class="count-num">00</span><span class="count-lab">Min</span></div>
+                    <div class="count-item"><span id="seconds" class="count-num">00</span><span class="count-lab">Seg</span></div>
+                </div>
+            </div>
         </section>
 
         <div id="img-2" class="parallax"></div>
@@ -115,10 +142,18 @@
             <h2 class="seccion">Nuestra Familia</h2>
             <p style="font-size: 0.7rem; letter-spacing: 2px; color: #888;">MIS PADRES</p>
             <p id="p-names" style="font-size: 1.3rem; margin-top: 5px;"></p>
-            
-            <div class="padrinos-box">
+            <div class="padrinos-box" style="background: white;">
                 <p style="font-size: 0.7rem; letter-spacing: 2px; color: var(--oro); font-weight: bold; margin: 0;">MIS PADRINOS</p>
-                <p id="g-names" style="font-size: 1.5rem; font-family: 'Cormorant Garamond', serif; font-weight: 600; margin-top: 10px;"></p>
+                <p id="g-names" style="font-size: 1.5rem; font-family: var(--fuente-e); font-weight: 600; margin-top: 10px;"></p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="iti-t" class="seccion"></h2>
+            <div class="details-box">
+                <div id="iti-1" class="iti-item"></div>
+                <div id="iti-2" class="iti-item"></div>
+                <div id="iti-3" class="iti-item"></div>
             </div>
         </section>
 
@@ -129,17 +164,26 @@
             <div class="details-box">
                 <p style="color: var(--oro); font-weight: bold; letter-spacing: 2px;">⛪ CEREMONIA</p>
                 <p id="iglesia" style="font-weight: bold; margin-top: 10px;"></p>
-                <div id="hora-i" class="time-box"></div>
-                <p id="fecha-i" style="margin-bottom: 15px; font-weight: bold;"></p>
+                <p id="hora-i" style="font-size: 1.8rem; font-family: var(--fuente-e); color: var(--oro); margin: 5px 0; font-weight: bold;"></p>
                 <a id="mapa-i" href="#" target="_blank" class="btn-menu">VER UBICACIÓN</a>
             </div>
-            
             <div class="details-box">
                 <p style="color: var(--oro); font-weight: bold; letter-spacing: 2px;">🎉 RECEPCIÓN</p>
                 <p id="salon" style="font-weight: bold; margin-top: 10px;"></p>
-                <div id="hora-s" class="time-box"></div>
-                <p>Al terminar la ceremonia</p>
+                <p id="hora-s" style="font-size: 1.8rem; font-family: var(--fuente-e); color: var(--oro); margin: 5px 0; font-weight: bold;"></p>
                 <a id="mapa-s" href="#" target="_blank" class="btn-menu">VER UBICACIÓN</a>
+            </div>
+        </section>
+
+        <section style="background: var(--bloque);">
+            <div style="margin-bottom: 40px;">
+                <h2 id="vest-t" class="seccion"></h2>
+                <p id="vest-tipo" style="font-weight: bold; color: var(--oro); letter-spacing: 1px;"></p>
+                <p id="vest-nota" style="font-size: 0.9rem; color: #666; font-style: italic;"></p>
+            </div>
+            <div>
+                <h2 id="sobres-t" class="seccion"></h2>
+                <p id="sobres-txt" style="font-size: 0.9rem; line-height: 1.6; color: #555; max-width: 90%; margin: 0 auto;"></p>
             </div>
         </section>
 
@@ -152,24 +196,30 @@
                 <a id="btn-gifts" href="#" target="_blank" class="btn-menu" style="width: 42%;">🎁 REGALOS</a>
             </div>
             <a id="btn-wa" href="#" target="_blank" class="btn-confirm">📲 CONFIRMAR ASISTENCIA</a>
-            <p id="footer-name" style="margin-top: 50px; font-family: 'Cormorant Garamond'; font-size: 2.2rem; color: var(--oro);"></p>
+            <p id="footer-name" style="margin-top: 50px; font-family: var(--fuente-e); font-size: 2.2rem; color: var(--oro);"></p>
         </section>
     </div>
 
     <script>
-        // APLICAR CONFIGURACIÓN DINÁMICA
+        // CARGAR CONFIGURACIÓN
+        const r = document.documentElement.style;
+        r.setProperty('--oro', CONFIG.color_primario);
+        r.setProperty('--texto', CONFIG.color_texto);
+        r.setProperty('--bloque', CONFIG.color_fondo_seccion);
+        r.setProperty('--fuente-e', CONFIG.fuente_elegante);
+        r.setProperty('--fuente-m', CONFIG.fuente_moderna);
+
         document.getElementById('baby-name').innerText = CONFIG.nombre_bebe;
         document.getElementById('footer-name').innerText = CONFIG.nombre_bebe;
         document.getElementById('frase').innerText = CONFIG.frase_biblica;
-        document.getElementById('txt-invita').innerText = CONFIG.texto_invitacion;
+        document.getElementById('txt-fecha-larga').innerText = CONFIG.fecha_texto_largo;
         document.getElementById('p-names').innerText = CONFIG.papas;
         document.getElementById('g-names').innerText = CONFIG.padrinos;
         document.getElementById('iglesia').innerText = CONFIG.iglesia_nombre;
         document.getElementById('hora-i').innerText = CONFIG.iglesia_hora;
-        document.getElementById('fecha-i').innerText = CONFIG.iglesia_fecha;
-        document.getElementById('mapa-i').href = CONFIG.mapa_iglesia;
         document.getElementById('salon').innerText = CONFIG.salon_nombre;
         document.getElementById('hora-s').innerText = CONFIG.salon_hora;
+        document.getElementById('mapa-i').href = CONFIG.mapa_iglesia;
         document.getElementById('mapa-s').href = CONFIG.mapa_salon;
         document.getElementById('btn-hotel').href = CONFIG.link_hospedaje;
         document.getElementById('btn-gifts').href = CONFIG.link_regalos;
@@ -177,16 +227,41 @@
         document.getElementById('audio-src').src = CONFIG.link_musica;
         document.getElementById('track').load();
 
-        // Aplicar Fotos
-        document.getElementById('img-1').style.backgroundImage = `url('${CONFIG.foto_1_portada}')`;
-        document.getElementById('img-2').style.backgroundImage = `url('${CONFIG.foto_2_familia}')`;
-        document.getElementById('img-3').style.backgroundImage = `url('${CONFIG.foto_3_evento}')`;
-        document.getElementById('img-4').style.backgroundImage = `url('${CONFIG.foto_4_final}')`;
+        document.getElementById('iti-t').innerText = CONFIG.iti_titulo;
+        document.getElementById('iti-1').innerText = CONFIG.iti_1;
+        document.getElementById('iti-2').innerText = CONFIG.iti_2;
+        document.getElementById('iti-3').innerText = CONFIG.iti_3;
+        document.getElementById('vest-t').innerText = CONFIG.vest_titulo;
+        document.getElementById('vest-tipo').innerText = CONFIG.vest_tipo;
+        document.getElementById('vest-nota').innerText = CONFIG.vest_nota;
+        document.getElementById('sobres-t').innerText = CONFIG.sobres_titulo;
+        document.getElementById('sobres-txt').innerText = CONFIG.sobres_texto;
 
-        // Colores
-        document.documentElement.style.setProperty('--oro', CONFIG.color_oro);
-        document.documentElement.style.setProperty('--bloque', CONFIG.color_fondo_claro);
-        document.documentElement.style.setProperty('--texto', CONFIG.color_texto_oscuro);
+        document.getElementById('img-1').style.backgroundImage = `url('${CONFIG.foto_1}')`;
+        document.getElementById('img-2').style.backgroundImage = `url('${CONFIG.foto_2}')`;
+        document.getElementById('img-3').style.backgroundImage = `url('${CONFIG.foto_3}')`;
+        document.getElementById('img-4').style.backgroundImage = `url('${CONFIG.foto_4}')`;
+
+        // LÓGICA DEL CONTADOR
+        const countdownDate = new Date(CONFIG.fecha_countdown).getTime();
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days < 10 ? "0"+days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? "0"+hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0"+minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0"+seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.querySelector(".countdown-container").innerHTML = "<p style='color:var(--oro); font-weight:bold;'>¡ES HOY!</p>";
+            }
+        }, 1000);
 
         const t = document.getElementById('track');
         function controlMusica() {
