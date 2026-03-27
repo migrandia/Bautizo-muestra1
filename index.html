@@ -10,12 +10,8 @@
     <meta property="og:image" content="https://www.dropbox.com/scl/fi/9avggx6ox57b9tkq9enxc/bautizo1.png?rlkey=xe50yu0f36p6uixsddj7mqs25&raw=1">
     <meta property="og:title" content="Invitación Bautizo - Sofía Valentina">
     <meta property="og:description" content="Te esperamos este 24 de Octubre para celebrar juntos.">
-    <meta property="og:type" content="website">
 
     <script>
-        /* ============================================================
-           1. CONFIGURACIÓN DEL EVENTO - TODO EDITABLE AQUÍ
-           ============================================================ */
         const DATOS_EVENTO = {
             nombre_bebe: "Sofía Valentina",
             frase_intro: "En tus manos, Señor, pongo mi vida y mi camino.",
@@ -29,7 +25,7 @@
             salon_mapa: "https://www.google.com/maps/place/Cd.+de+M%C3%A9xico/@19.3202008,-99.4822761,10z/data=!3m1!4b1!4m6!3m5!1s0x85ce0036b1352927:0xdefd9e4ee8d18a5b!8m2!3d19.2464696!4d-99.1013498!16s%2Fg%2F1220wgqb?entry=ttu&g_ep=EgoyMDI2MDMyMy4xIKXMDSoASAFQAw%3D%3D",
             link_hospedaje: "https://migrandia.github.io/Hoteles/",
             link_regalos: "https://mesaderegalos.liverpool.com.mx/",
-            whatsapp_confirmar: "https://wa.me/521234567890?text=Confirmo%20asistencia%20al%20bautizo",
+            whatsapp_confirmar: "https://wa.me/521234567890?text=Confirmo%20asistencia",
             link_musica: "https://www.dropbox.com/scl/fi/80hypdxkg24wx6x7oael2/En-Tus-Manos-Se-or.mp3?rlkey=j4di62c9sgj4txgwbpikcngp3&raw=1"
         };
     </script>
@@ -41,19 +37,32 @@
         body, html { margin: 0; padding: 0; background-color: #1a1a1a; color: var(--texto); font-family: 'Montserrat', sans-serif; overflow-x: hidden; text-align: center; scroll-behavior: smooth;}
         .invitation-container { max-width: 480px; margin: 0 auto; background-color: var(--blanco); box-shadow: 0 0 50px rgba(0,0,0,0.5); }
         
-        .parallax { height: 100vh; background-attachment: fixed; background-position: center; background-size: cover; position: relative; display: flex; align-items: center; justify-content: center; }
+        /* PARALLAX CONFIG */
+        .parallax { 
+            height: 80vh; 
+            background-attachment: fixed; 
+            background-position: center; 
+            background-size: cover; 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
         
-        /* Capa oscura para portada */
+        /* PORTADA ESPECIAL */
+        #img-1 { height: 100vh; }
         #img-1::after { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.45); z-index: 1; }
-        .parallax:not(#img-1)::after { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(255,255,255,0.1); }
         
+        /* FILTRO SUAVE PARA LAS DEMÁS FOTOS */
+        .parallax::before { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(255,255,255,0.1); z-index: 1; }
+
         h1.nombre-portada { 
             font-family: 'Cormorant Garamond', serif; font-size: 3.8rem; color: var(--blanco); 
             z-index: 2; margin: 0; font-weight: 300; text-shadow: 0 2px 15px rgba(212, 180, 131, 0.9); 
         }
         .bautizo-txt { font-size: 0.85rem; letter-spacing: 6px; color: var(--blanco); z-index: 2; position: relative; margin-bottom: 10px; font-weight: bold; }
 
-        section { padding: 80px 20px; position: relative; }
+        section { padding: 80px 20px; position: relative; background: var(--blanco); }
         h2.seccion { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; color: var(--texto); margin-bottom: 20px; font-weight: 600;}
         
         .details-box { background: var(--bloque); padding: 30px 20px; border-radius: 15px; border: 1px solid #eee; margin: 20px 0; }
@@ -92,7 +101,7 @@
             <p>Queremos compartir la alegría del bautizo de nuestra pequeña. Tu presencia es nuestro mejor regalo.</p>
         </section>
 
-        <div id="img-2" class="parallax" style="height: 60vh;"></div>
+        <div id="img-2" class="parallax"></div>
 
         <section style="background: var(--bloque);">
             <h2 class="seccion">Nuestra Familia</h2>
@@ -105,7 +114,7 @@
             </div>
         </section>
 
-        <div id="img-3" class="parallax" style="height: 60vh;"></div>
+        <div id="img-3" class="parallax"></div>
 
         <section id="eventos">
             <h2 class="seccion">Ceremonia y Fiesta</h2>
@@ -124,7 +133,7 @@
             </div>
         </section>
 
-        <div id="img-4" class="parallax" style="height: 60vh;"></div>
+        <div id="img-4" class="parallax"></div>
 
         <section>
             <h2 class="seccion">Detalles</h2>
@@ -138,7 +147,6 @@
     </div>
 
     <script>
-        // Carga de Datos
         document.getElementById('baby-name').innerText = DATOS_EVENTO.nombre_bebe;
         document.getElementById('frase').innerText = DATOS_EVENTO.frase_intro;
         document.getElementById('p-names').innerText = DATOS_EVENTO.papás;
