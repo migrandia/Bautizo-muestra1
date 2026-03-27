@@ -3,162 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bautizo | Sofía Valentina</title>
+    <title>Hospedaje | Bautizo Sofía Valentina</title>
 
     <script>
         /* ============================================================
-           1. CONFIGURACIÓN DEL EVENTO
+           1. CONFIGURACIÓN DEL EVENTO - EDITA AQUÍ
            ============================================================ */
-        const DATOS_EVENTO = {
-            nombre_bebe: "Sofía Valentina",
-            frase_intro: "En tus manos, Señor, pongo mi vida y mi camino.",
-            papás: "Roberto & Lucía",
-            padrinos: "Carlos & Elena",
-            iglesia_nombre: "Parroquia de San Juan Bautista",
-            iglesia_hora: "12:00 PM",
-            iglesia_mapa: "https://www.google.com/maps/place/Cd.+de+M%C3%A9xico/@19.3202008,-99.4822761,10z/data=!3m1!4b1!4m6!3m5!1s0x85ce0036b1352927:0xdefd9e4ee8d18a5b!8m2!3d19.2464696!4d-99.1013498!16s%2Fg%2F1220wgqb?entry=ttu&g_ep=EgoyMDI2MDMyMy4xIKXMDSoASAFQAw%3D%3D",
-            salon_nombre: "Quinta Las Palmas",
-            salon_hora: "02:30 PM",
-            salon_mapa: "https://www.google.com/maps/place/Cd.+de+M%C3%A9xico/@19.3202008,-99.4822761,10z/data=!3m1!4b1!4m6!3m5!1s0x85ce0036b1352927:0xdefd9e4ee8d18a5b!8m2!3d19.2464696!4d-99.1013498!16s%2Fg%2F1220wgqb?entry=ttu&g_ep=EgoyMDI2MDMyMy4xIKXMDSoASAFQAw%3D%3D",
-            link_hospedaje: "https://migrandia.github.io/Hoteles/",
-            link_regalos: "https://mesaderegalos.liverpool.com.mx/",
-            whatsapp_confirmar: "https://wa.me/521234567890?text=Confirmo%20asistencia%20al%20bautizo",
-            link_musica: "https://www.dropbox.com/scl/fi/80hypdxkg24wx6x7oael2/En-Tus-Manos-Se-or.mp3?rlkey=j4di62c9sgj4txgwbpikcngp3&raw=1"
+        const CONFIG = {
+            // COLORES (Dorado, Fondo suave, Texto oscuro)
+            color_oro: "#d4b483",
+            color_fondo: "#fcfaf8",
+            color_texto: "#2d2d2d",
+            
+            // Si el historial falla, ¿a qué página debe ir por defecto?
+            pagina_invitacion: "index.html" 
+        };
+
+        const DATOS_HOTEL = {
+            nombre: "Hotel Sede: Las Palmas Inn",
+            // FOTO HERO DEL HOTEL (Editable con URL)
+            foto_hero: "https://www.dropbox.com/scl/fi/7d6z0ji1ip3el5ijciae4/bautizo4.png?rlkey=5e3uypk20ipb9kge7l0kfv727&raw=1", 
+            direccion: "Av. Principal 123, Jardín de Eventos, Ciudad.",
+            codigo_descuento: "BAUTIZO SOFÍA 2026",
+            fecha_limite: "15 de Octubre",
+            telefono: "+521234567890",
+            link_web: "https://www.hotel-ejemplo.com",
+            iframe_mapa: "https://maps.google.com/?cid=16068173107278482011&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl"
+        };
+
+        // DATOS DE LOS PADRINOS - EDITA AQUÍ
+        const PADRINOS = {
+            nombres: "Carlos & Elena",
+            frase: "Gracias por guiar mis pasos con amor y fe."
         };
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
     
     <style>
-        :root { --oro: #d4b483; --blanco: #ffffff; --texto: #2d2d2d; --bloque: #fdfaf8; }
-        body, html { margin: 0; padding: 0; background-color: #1a1a1a; color: var(--texto); font-family: 'Montserrat', sans-serif; overflow-x: hidden; text-align: center; }
-        .invitation-container { max-width: 480px; margin: 0 auto; background-color: var(--blanco); box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+        :root { --oro: #d4b483; --fondo: #fcfaf8; --texto: #2d2d2d; }
+        body { margin: 0; padding: 0; background-color: #1a1a1a; color: var(--texto); font-family: 'Montserrat', sans-serif; text-align: center; }
         
-        /* PARALLAX */
-        .parallax { height: 100vh; background-attachment: fixed; background-position: center; background-size: cover; position: relative; display: flex; align-items: center; justify-content: center; }
-        .parallax::after { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(255,255,255,0.15); }
-        
-        h1.nombre { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: var(--oro); z-index: 2; margin: 0; font-weight: 300; }
-        h2.seccion { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--texto); margin-bottom: 20px; }
-        
-        section { padding: 60px 20px; position: relative; }
-        .details-box { background: var(--bloque); padding: 30px 20px; border-radius: 15px; border: 1px solid #eee; margin: 20px 0; }
-        .time-box { font-size: 2.5rem; color: var(--oro); font-family: 'Cormorant Garamond', serif; margin: 10px 0; }
+        .hotel-wrapper { 
+            max-width: 480px; margin: 0 auto; background-color: var(--fondo); 
+            min-height: 100vh; box-shadow: 0 0 40px rgba(0,0,0,0.5); 
+        }
 
-        /* BOTONES */
-        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 20px; }
-        .btn-menu { display: block; padding: 15px 5px; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; font-weight: bold; font-size: 0.7rem; letter-spacing: 2px; border-radius: 30px; text-transform: uppercase; transition: 0.3s; }
-        .btn-confirm { background: var(--oro); color: white; width: 80%; margin: 20px auto; padding: 18px; display: block; text-decoration: none; border-radius: 40px; font-weight: bold; letter-spacing: 2px; }
+        /* HERO DINÁMICO CON FOTO EDITABLE */
+        .hotel-hero { 
+            height: 300px; background-position: center !important; background-size: cover !important; 
+            display: flex; align-items: center; justify-content: center; position: relative; 
+        }
+        .hotel-hero::before { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); }
+        
+        h1 { font-family: 'Cormorant Garamond', serif; color: white; font-size: 2.5rem; letter-spacing: 3px; position: relative; z-index: 1; margin: 0; }
+        
+        section { padding: 40px 20px; }
+        
+        .hotel-card { 
+            background: white; border-radius: 12px; padding: 30px 20px; 
+            border: 1px solid #f2ede4; margin-top: -50px; position: relative; 
+            z-index: 2; width: 85%; margin-left: auto; margin-right: auto; 
+        }
 
-        /* REPRODUCTOR MÚSICA */
-        #music-btn { position: fixed; bottom: 20px; right: 20px; z-index: 1000; width: 45px; height: 45px; background: var(--oro); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid white; cursor: pointer; }
-        .playing { animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(212, 180, 131, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(212, 180, 131, 0); } 100% { box-shadow: 0 0 0 0 rgba(212, 180, 131, 0); } }
+        .detalles { font-size: 0.9rem; line-height: 1.8; color: #555; text-align: left; margin: 20px 0; }
+
+        .btn-action { 
+            display: block; background: var(--texto); color: white; 
+            padding: 18px; border-radius: 8px; text-decoration: none; 
+            font-weight: bold; font-size: 0.8rem; letter-spacing: 2px; margin-top: 15px; 
+        }
+
+        /* BLOQUE PADRINOS DESTACADO */
+        .padrinos-box {
+            background: #f9f5f0; padding: 25px; border-radius: 10px; border: 1px solid #e0d4c0; margin-top: 20px; text-align: center;
+        }
+
+        .map-box { width: 100%; height: 250px; background: #eee; border-radius: 8px; margin-top: 20px; overflow: hidden; }
+        iframe { width: 100%; height: 100%; border: none; }
+
+        .footer-back { margin-top: 40px; padding-bottom: 60px; }
+        
+        .back-link { 
+            display: inline-block; color: var(--oro); text-decoration: none; 
+            font-size: 0.8rem; letter-spacing: 2px; font-weight: bold; 
+            border: 1px solid var(--oro); padding: 12px 25px; border-radius: 30px; 
+            cursor: pointer; background: none; transition: 0.3s;
+        }
+        .back-link:hover { background: var(--oro); color: white; }
     </style>
 </head>
 <body>
 
-    <div id="music-btn" onclick="controlMusica()">
-        <svg id="play-svg" width="20" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        <svg id="pause-svg" width="20" fill="white" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-    </div>
-    <audio id="track" loop><source id="audio-src" src="" type="audio/mpeg"></audio>
-
-    <div class="invitation-container">
+    <div class="hotel-wrapper">
+        <div id="hero-img" class="hotel-hero"><h1>Hospedaje</h1></div>
         
-        <div id="img-1" class="parallax"><h1 id="baby-name" class="nombre"></h1></div>
-
         <section>
-            <p id="frase" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; color: #666;"></p>
-        </section>
-
-        <div id="img-2" class="parallax" style="height: 50vh;"></div>
-
-        <section style="background: var(--bloque);">
-            <h2 class="seccion">Nuestra Familia</h2>
-            <p>Papás: <strong id="p-names"></strong></p>
-            <p>Padrinos: <strong id="g-names"></strong></p>
-        </section>
-
-        <div id="img-3" class="parallax" style="height: 50vh;"></div>
-
-        <section>
-            <h2 class="seccion">Ceremonia</h2>
-            <div class="details-box">
-                <p id="iglesia"></p>
-                <div id="hora-i" class="time-box"></div>
-                <a id="mapa-i" href="#" target="_blank" class="btn-menu">Ver Ubicación</a>
+            <div class="hotel-card">
+                <p style="font-size: 0.7rem; letter-spacing: 3px; color: var(--oro); font-weight: bold;">OPCIÓN RECOMENDADA</p>
+                <h2 id="hotel-name" style="font-family: 'Cormorant Garamond'; color: var(--oro); font-size: 1.8rem; margin: 10px 0;"></h2>
+                <div class="detalles">
+                    <p><strong>📍 Ubicación:</strong> <span id="txt-dir"></span></p>
+                    <p><strong>🔑 Código:</strong> <span id="txt-cod"></span></p>
+                    <p><strong>📅 Límite:</strong> <span id="txt-lim"></span></p>
+                </div>
+                <a id="link-tel" href="#" class="btn-action" style="background: var(--oro);">LLAMAR PARA RESERVAR</a>
+                <a id="link-web" href="#" target="_blank" class="btn-action">RESERVAR EN LÍNEA</a>
             </div>
             
-            <h2 class="seccion">Recepción</h2>
-            <div class="details-box">
-                <p id="salon"></p>
-                <div id="hora-s" class="time-box"></div>
-                <a id="mapa-s" href="#" target="_blank" class="btn-menu">Ver Ubicación</a>
+            <div class="padrinos-box">
+                <p style="font-size: 0.8rem; letter-spacing: 2px; color: var(--oro); font-weight: bold; margin: 0;">Y MIS PADRINOS</p>
+                <p style="font-size: 1.5rem; color: var(--texto); font-family: 'Cormorant Garamond', serif; font-weight: 600; margin: 10px 0 0;"><strong id="g-names"></strong></p>
+                <p id="padrinos-frase" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: #666; margin-top: 10px;"></p>
             </div>
         </section>
 
-        <div id="img-4" class="parallax" style="height: 50vh;"></div>
-
         <section>
-            <h2 class="seccion">Detalles</h2>
-            <div class="menu-grid">
-                <a id="btn-hotel" href="#" class="btn-menu">🏨 Hospedaje</a>
-                <a id="btn-gifts" href="#" target="_blank" class="btn-menu">🎁 Regalos</a>
-            </div>
-            
-            <a id="btn-wa" href="#" target="_blank" class="btn-confirm">CONFIRMAR ASISTENCIA</a>
-            
-            <p style="margin-top: 50px; font-family: 'Cormorant Garamond'; font-size: 2rem; color: var(--oro);">Sofía Valentina</p>
+            <h3 style="font-family: 'Cormorant Garamond'; font-size: 1.5rem;">Ubicación</h3>
+            <div class="map-box"><iframe id="mapa-frame" src="" allowfullscreen="" loading="lazy"></iframe></div>
         </section>
+
+        <div class="footer-back">
+            <button onclick="regresarUniversal()" class="back-link">← VOLVER</button>
+        </div>
     </div>
 
     <script>
-        // Cargar Datos
-        document.getElementById('baby-name').innerText = DATOS_EVENTO.nombre_bebe;
-        document.getElementById('frase').innerText = DATOS_EVENTO.frase_intro;
-        document.getElementById('p-names').innerText = DATOS_EVENTO.papás;
-        document.getElementById('g-names').innerText = DATOS_EVENTO.padrinos;
-        document.getElementById('iglesia').innerText = DATOS_EVENTO.iglesia_nombre;
-        document.getElementById('hora-i').innerText = DATOS_EVENTO.iglesia_hora;
-        document.getElementById('mapa-i').href = DATOS_EVENTO.iglesia_mapa;
-        document.getElementById('salon').innerText = DATOS_EVENTO.salon_nombre;
-        document.getElementById('hora-s').innerText = DATOS_EVENTO.salon_hora;
-        document.getElementById('mapa-s').href = DATOS_EVENTO.salon_mapa;
-        document.getElementById('btn-hotel').href = DATOS_EVENTO.link_hospedaje;
-        document.getElementById('btn-gifts').href = DATOS_EVENTO.link_regalos;
-        document.getElementById('btn-wa').href = DATOS_EVENTO.whatsapp_confirmar;
-        document.getElementById('audio-src').src = DATOS_EVENTO.link_musica;
-        document.getElementById('track').load();
+        // Cargar Colores dinámicamente
+        const r = document.documentElement.style;
+        r.setProperty('--oro', CONFIG.color_oro);
+        r.setProperty('--fondo', CONFIG.color_fondo);
+        r.setProperty('--texto', CONFIG.color_texto);
 
-        const fotos = [
-            "https://www.dropbox.com/scl/fi/9avggx6ox57b9tkq9enxc/bautizo1.png?rlkey=xe50yu0f36p6uixsddj7mqs25&raw=1",
-            "https://www.dropbox.com/scl/fi/amq1vsm698rsf1daimlr6/bautizo2.png?rlkey=z2d7is02ys38pl6rd85cbmorz&raw=1",
-            "https://www.dropbox.com/scl/fi/2qofdzgyeo5bbcuab06rg/bautizo3.png?rlkey=h1keafa8tfesl0j739kvj0w0g&raw=1",
-            "https://www.dropbox.com/scl/fi/7d6z0ji1ip3el5ijciae4/bautizo4.png?rlkey=5e3uypk20ipb9kge7l0kfv727&raw=1"
-        ];
-        document.getElementById('img-1').style.backgroundImage = `url('${fotos[0]}')`;
-        document.getElementById('img-2').style.backgroundImage = `url('${fotos[1]}')`;
-        document.getElementById('img-3').style.backgroundImage = `url('${fotos[2]}')`;
-        document.getElementById('img-4').style.backgroundImage = `url('${fotos[3]}')`;
+        // Cargar Datos del Hotel y Foto Hero Editable
+        document.getElementById('hero-img').style.background = `url('${DATOS_HOTEL.foto_hero}')`;
+        document.getElementById('hotel-name').innerText = DATOS_HOTEL.nombre;
+        document.getElementById('txt-dir').innerText = DATOS_HOTEL.direccion;
+        document.getElementById('txt-cod').innerText = DATOS_HOTEL.codigo_descuento;
+        document.getElementById('txt-lim').innerText = DATOS_HOTEL.fecha_limite;
+        document.getElementById('link-tel').href = `tel:${DATOS_HOTEL.telefono}`;
+        document.getElementById('link-web').href = DATOS_HOTEL.link_web;
+        document.getElementById('mapa-frame').src = DATOS_HOTEL.iframe_mapa;
+        
+        // Cargar Datos de los Padrinos
+        document.getElementById('g-names').innerText = PADRINOS.nombres;
+        document.getElementById('padrinos-frase').innerText = PADRINOS.frase;
 
-        // Lógica de Música
-        const t = document.getElementById('track');
-        function controlMusica() {
-            if (t.paused) {
-                t.play();
-                document.getElementById('play-svg').style.display='none';
-                document.getElementById('pause-svg').style.display='block';
-                document.getElementById('music-btn').classList.add('playing');
+        /* LA FUNCIÓN QUE SOLUCIONA TODO */
+        function regresarUniversal() {
+            // 1. Avisar que el sobre debe estar abierto (si lo tienes)
+            sessionStorage.setItem('sobreAbierto', 'true');
+
+            // 2. Intentar regresar a la página anterior real
+            if (document.referrer && document.referrer !== "" && document.referrer.includes(window.location.hostname)) {
+                window.location.href = document.referrer;
             } else {
-                t.pause();
-                document.getElementById('play-svg').style.display='block';
-                document.getElementById('pause-svg').style.display='none';
-                document.getElementById('music-btn').classList.remove('playing');
+                // 3. Si falla o no hay historial, ir a la invitación principal
+                window.location.href = CONFIG.pagina_invitacion;
             }
         }
-        // Iniciar al primer clic
-        document.addEventListener('click', () => { if(t.paused) controlMusica(); }, {once: true});
     </script>
 </body>
 </html>
